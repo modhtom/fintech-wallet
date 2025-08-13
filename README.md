@@ -39,7 +39,7 @@ It’s designed to simulate a real-world fintech product that could be deployed 
 
 ## **Database Schema**
 
-![Database Diagram](docs/db_schema.png)
+![Database Diagram](src/main/resources/docs/db_schema.png)
 *(See `src/main/resources/data.sql` for full schema.)*
 
 ---
