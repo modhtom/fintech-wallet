@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:17
+    container_name: fintech-postgres-db
+    environment:
+      POSTGRES_DB: fintech_wallet
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: modhtom
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+  app:
+    build: .
+    container_name: fintech-app
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      - SPRING_PROFILES_ACTIVE=prod
+      - DB_URL=jdbc:postgresql://db:5432/fintech_wallet
+      - DB_USER=postgres
+      - DB_PASS=mdohtom
+      - JWT_SECRET_KEY=B5E29A9E0A6A4D3A8F0B4C8A6F0E2D5B8F3C7A1D9E0F2A4B8E3C7A1F0B4D8A6F
