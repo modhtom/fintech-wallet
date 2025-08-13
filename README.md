@@ -16,24 +16,40 @@ It’s designed to simulate a real-world fintech product that could be deployed 
 
 ## **Features**
 
-* **User Management** – Create, update, and delete user accounts.
-* **Bank Account Linking** – Connect multiple accounts to a single user.
-* **Transaction Tracking** – Record and view spending transactions.
-* **Round-Up Calculation** – Automatically collect spare change from transactions.
-* **Investment Portfolio** – Store and track investments from round-ups.
-* **Batch Processing** – Process round-ups in batches for investment.
-* **API-First Design** – Fully documented REST API.
+* **Secure User Management**: JWT-based authentication for user registration and login.
+
+* **Transaction Ingestion**: RESTful endpoint to accept and store user transaction data.
+
+* **Automatic Round-Up Savings**: Automatically calculates and saves the spare change from every transaction.
+
+* **Simulated Portfolio Management**: A weekly scheduled job aggregates round-ups and applies a simulated 1% interest to grow the user's portfolio.
+
+* **Dynamic API**: Supports pagination, sorting, and filtering on key endpoints.
+
+* **Admin Capabilities**: Secure endpoint for administrators to trigger processing jobs manually.
+
+* **Self-Documenting API**: Integrated Swagger/OpenAPI for interactive API documentation.
+
+* **Containerized**: Fully containerized with Docker and Docker Compose for easy setup and deployment.
+
+* **Automated CI/CD**: A GitHub Actions pipeline automatically builds, tests, and publishes a Docker image on every push to main.
 
 ---
 
 ## **Tech Stack**
-- **Java 21**
-- **Spring Boot 3.x**
-- **PostgreSQL** 
-- **Spring Data JPA**
-- **Lombok**
-- **Springdoc OpenAPI**
-- **Maven**
+- **Language**: Java 21
+
+- **Framework**: Spring Boot 3 (Web, Data JPA, Security, Scheduling)
+
+- **Database**: PostgreSQL
+
+- **Build Tool**: Maven
+
+- **API Documentation**: springdoc-openapi (Swagger UI)
+
+- **Containerization**: Docker, Docker Compose
+
+- **CI/CD**: GitHub Actions
 
 ---
 
